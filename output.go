@@ -12,18 +12,21 @@ func ReadFiles(str []string, name string) []string {
 	file, err := os.Open(filename)
 	if err != nil {
 		log.Fatal(err)
+		fmt.Println("ali")
+		//	os.Exit(1)
 	}
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		str = append(str, scanner.Text())
 	}
-	if err := scanner.Err(); err != nil {
+	if er := scanner.Err(); er != nil {
 		log.Fatal(err)
 	}
 	return str
 }
 
+//arr:= { "", "", "asds")split() //\n\nasds        if char == ""  file.Write('\n') else {wfie}
 func WriteFile(name string, str [][]string) {
 	f, err := os.Open(name)
 	if err != nil {
