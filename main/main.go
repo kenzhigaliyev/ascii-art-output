@@ -18,7 +18,7 @@ func main() {
 	if len(os.Args[1:]) == 0 {
 		return
 	} else if len(os.Args[1:]) > 3 {
-		fmt.Println("too many arguments")
+		fmt.Println("Too many arguments!")
 		return
 	}
 	arg := os.Args[1:]
@@ -86,16 +86,16 @@ func wordFontFlagSplit(s []string) (string, string, string) { //{"asdasd", "asds
 	for i := 1; i < len(s); i++ {
 		if strings.HasPrefix(s[i], "--output") {
 			if i != len(s)-1 {
-				fmt.Println("not correct order")
+				fmt.Println("Not correct order!")
 				return "", "", ""
 			}
 			if s[i] == "--output" || s[i] == "--output=" {
-				fmt.Println("--output: needs an argument")
+				fmt.Println("--output: needs an argument!")
 				return "", "", ""
 			}
 			flagTemp = s[i]
 			if flagTemp[8] != '=' {
-				fmt.Println("Not correct operator")
+				fmt.Println("Not correct operator!")
 				return "", "", ""
 			}
 			flagTemp = flagTemp[9:]
